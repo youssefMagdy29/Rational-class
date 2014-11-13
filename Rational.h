@@ -8,8 +8,9 @@ using namespace std;
 
 class Rational {
  public:
-  Rational add(Rational* that);
   Rational(int n, int d);
+  Rational add(Rational* that);
+  Rational sub(Rational* that);
   void print();
  private:
   int gcd(int a, int b);
@@ -26,12 +27,20 @@ Rational::Rational(int n, int d) {
     num = -num;
 }
 
-Rational  Rational::add(Rational* that) {
+Rational Rational::add(Rational* that) {
   return Rational(num * that->den + that->num * den, den * that->den);
 }
 
+Rational Rational::sub(Rational* that) {
+  return Rational(num * that->den - that->num * den, den * that->den);
+}
+
+
 void Rational::print() {
-  cout << num << "/" << den << endl;
+  if (den == 1)
+    cout << num << endl;
+  else
+    cout << num << "/" << den << endl;
 }
 
 int Rational::gcd(int a, int b) { return (b == 0 ? a : gcd(b, a % b)); }
