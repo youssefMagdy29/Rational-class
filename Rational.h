@@ -11,6 +11,7 @@ class Rational {
   Rational(int n, int d);
   Rational add(Rational* that);
   Rational sub(Rational* that);
+  Rational mul(Rational* that);
   void print();
  private:
   int gcd(int a, int b);
@@ -33,6 +34,10 @@ Rational Rational::add(Rational* that) {
 
 Rational Rational::sub(Rational* that) {
   return Rational(num * that->den - that->num * den, den * that->den);
+}
+
+Rational Rational::mul(Rational* that) {
+  return Rational(num * tha->num, den * that->den);
 }
 
 

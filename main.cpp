@@ -8,7 +8,9 @@ int main() {
   Rational y(1, 2);
   Rational z(1, 6);
   Rational sum = x.add(&y).add(&z);
-  Rational sub = x.sub(&y).sub(&y);
+  Rational sub = x.sub(&y).sub(&z);
+  Rational mul = x.mul(&y).mul(&z);
   sum.print();
   sub.print();
+  mul.print();
 }
